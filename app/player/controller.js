@@ -24,7 +24,8 @@ module.exports = {
       res.status(500).json({ message: err.message || `Internal server error` })
 
     }
-  },
+   },
+
   detailPage: async (req, res) => {
     try {
       const { id } = req.params
@@ -107,7 +108,7 @@ module.exports = {
         value: value,
         player: req.player._id,
         historyUser: {
-          name: res_voucher._doc.user?.name,
+          name: res_voucher._doc.user?._name,
           phoneNumber: res_voucher._doc.user?.phoneNumber
         },
 

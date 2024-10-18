@@ -34,7 +34,7 @@ app.use(session({
   cookie: {}
 }))
 app.use(flash());
-app.use(methodOverride('_method'))
+app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -52,7 +52,7 @@ app.use('/payment', paymentRouter);
 app.use('/transaction', transactionRouter);
 
 // api
-app.use(`${URL}/players`, playerRouter);
+app.use(`${URL}/player`, playerRouter);
 app.use(`${URL}/auth`, authRouter);
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
